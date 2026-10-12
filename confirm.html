@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Book Shop</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="confirm.html">Order Confirm</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Order Confirmation</h2>
+        <form action="thank_you.html" method="POST" id="order-form">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" id="name" name="name"  placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <select id="cities" name="cities" required>
+                    <option value="ChanAyeTharzan">ChanAyeTharzan</option>
+                    <option value="Amarapura">Amarapura</option>
+                    <option value="ChanMyatharzi">ChanMyatharzi</option>
+                    <option value="MaharAungMyay">MaharAungMyay</option>
+                    <option value="AungMyayTharZan">AungMyayTharZan</option>
+                </select>
+                <input type="text" id="address" name="address"  placeholder="Enter your delivery address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"  placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment" required>
+                    <option value="kpay">KPAY</option>
+                    <option vlaue="Ayapay"></option>AYAPAY</option>
+                    <option value="wavepay">WAVE PAY</option>
+                    <option value="Cash on delivery">COD</option>
+                </select>
+            </div>
+
+            <!-- <div class="form-group">My Errors
+                <a href="thank.html" id="confirm-order" class="btn">Confirm Order</a>
+            </div> -->
+            <div class="form-group">
+                <button type="submit" id="confirm-order" class="btn">Confirm Order</button>
+            </div>
+            
+        </form>
+    </main>
+
+    <footer>
+        <p>ခန့်ခန့်စာပေ </p>
+    </footer>
+
+</body>
+</html>

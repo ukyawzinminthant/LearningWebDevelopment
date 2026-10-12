@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+    </header>
+    <main>
+        <h2>မှာယူထားသော အစားအစာများ</h2>
+        
+            <?php
+            $total = 0;
+
+            if (!empty($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $item) {
+                    echo "<li>{$item['title']} - {$item['price']} MMK</li>";
+                    $total += $item['price'];
+                }
+            } else { 
+                echo "<li>Your cart is empty.</li>";
+            }
+            ?>
+        
+        <p><strong>Total:</strong> <?php echo $total; ?> MMK</p>
+
+        <form method="post">
+            <button type="submit" name="clear_cart">Clear Cart</button>
+        </form>
+        <a href="confirm.html" class="btn">Confirm Order</a>
+    </main>
+    <footer>
+        <p>ခန့်ခန့် စာပေ</p>
+    </footer>
+</body>
+</html>
