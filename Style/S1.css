@@ -1,0 +1,25 @@
+p{
+    color: blue;
+}
+#name{
+    color: green;
+}
+#fathername{
+    color: blue;
+}
+#age{
+    color: red;
+}
+#email{
+    color: pink;
+}
+form{
+    text-align: center;
+}
+h2,form{
+    border: 2px dotted black;
+    padding: 20px;
+    width: 350px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
