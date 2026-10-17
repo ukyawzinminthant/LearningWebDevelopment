@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burma Phno validattor</title>
+</head>
+<body>
+    
+<h1> Myanmar Phone Number validattor</h1>
+
+<input type="text" id="phoneNumber" placeholder="Enter Regional Number">
+<button onclick="checkoperator()"> Check Operator</button>
+<p id="result"></p>
+
+<script>
+    function checkoperator() {
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const resultElement= document.getElementById("result");
+    
+    if(!phoneNumber.startsWith('09')) {
+        resultElement.textContent = 'Please enter a valid Myanmar PhoneNumber';
+        return;
+    }
+
+    let operator = "Unknown Operator";
+
+    if (phoneNumber.startsWith("097")) {
+        operator = "Telenor";
+    } else if (phoneNumber.startsWith("096")) {
+        operator = "Mytel";
+    } else if (phoneNumber.startsWith("099")) {
+         operator = "U9"
+    } else if (phoneNumber.startsWith("094")||
+               phoneNumber.startsWith("098")
+){
+    operator = "MPT";
+}
+
+resultElement.textContent=` The operator for  ${phoneNumber} is : ${operator}`;
+
+    }
+</script>
+</body>
+</html>

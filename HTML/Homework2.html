@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ကျောင်းအပ်လက်ခံ Form</title>
+    <link rel="stylesheet" href="../Style/H2.css"
+</head>
+
+<body>
+
+    <h1>ကျောင်းအပ်လက်ခံ Form</h1>
+
+    <div id="form-section">
+        <form id="registration-form">
+
+            <p>
+                <label for="name">အမည်:</label>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="fathername">အဘအမည်:</label>
+                <input type="text" id="fathername" name="fathername" required>
+            </p>
+
+            <p>
+                <label for="phone">ဖုန်းနံပါတ်:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </p>
+
+            <p>
+                <label for="dob">မွေးသက္ကရာဇ်:</label>
+                <input type="date" id="dob" name="dob" required>
+            </p>
+
+            <p>
+                <label for="nrc">မှတ်ပုံတင်အမှတ်:</label>
+                <input type="text" id="nrc" name="nrc" required>
+            </p>
+
+            <p>
+                <label for="address">နေရပ်လိပ်စာ:</label>
+                <input type="text" id="address" name="address" required>
+            </p>
+
+            <p>
+                <label for="major">အထူးပြုမေဂျာ:</label>
+                <select id="major" name="major" required>
+                    <option value="">မေဂျာရွေးချယ်ပါ</option>
+                    <option value="ပထဝီ">ပထဝီ</option>
+                    <option value="ကွန်ပျူတာသိပ္ပံ">ကွန်ပျူတာသိပ္ပံ</option>
+                    <option value="English">English</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="details">ဆက်သွယ်ရန်လိပ်စာအပြည့်အစုံ:</label>
+                <input type="text" id="details" name="details" required>
+            </p>
+
+            <button type="submit">လျှောက်လွှာတင်ရန်</button>
+
+        </form>
+    </div>
+
+    <div id="result-section" hidden>
+
+        <h1>လျှောက်လွှာအချက်အလက်</h1>
+
+        <p><strong>အမည်:</strong>
+            <span id="result-name"></span>
+        </p>
+
+        <p><strong>အဘအမည်:</strong>
+            <span id="result-fathername"></span>
+        </p>
+
+        <p><strong>ဖုန်းနံပါတ်:</strong>
+            <span id="result-phone"></span>
+        </p>
+
+        <p><strong>မွေးသက္ကရာဇ်:</strong>
+            <span id="result-dob"></span>
+        </p>
+
+        <p><strong>မှတ်ပုံတင်အမှတ်:</strong>
+            <span id="result-nrc"></span>
+        </p>
+
+        <p><strong>နေရပ်လိပ်စာ:</strong>
+            <span id="result-address"></span>
+        </p>
+
+        <p><strong>အထူးပြုမေဂျာ:</strong>
+            <span id="result-major"></span>
+        </p>
+
+        <p><strong>ဆက်သွယ်ရန်လိပ်စာအပြည့်အစုံ:</strong>
+            <span id="result-details"></span>
+        </p>
+
+        <button type="button" id="backButton">Back</button>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("registration-form");
+            const formsection = document.getElementById("form-section");
+            const resultsection = document.getElementById("result-section");
+            const backButton = document.getElementById("backButton");
+
+            form.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const fathername = document.getElementById("fathername").value;
+                const phone = document.getElementById("phone").value;
+                const dob = document.getElementById("dob").value;
+                const nrc = document.getElementById("nrc").value;
+                const address = document.getElementById("address").value;
+                const major = document.getElementById("major").value;
+                const details = document.getElementById("details").value;
+
+                document.getElementById("result-name").innerText = name;
+                document.getElementById("result-fathername").innerText = fathername;
+                document.getElementById("result-phone").innerText = phone;
+                document.getElementById("result-dob").innerText = dob;
+                document.getElementById("result-nrc").innerText = nrc;
+                document.getElementById("result-address").innerText = address;
+                document.getElementById("result-major").innerText = major;
+                document.getElementById("result-details").innerText = details;
+
+                formsection.hidden = true;
+                resultsection.hidden = false;
+
+            });
+
+            backButton.addEventListener("click", function () {
+
+                resultsection.hidden = true;
+                formsection.hidden = false;
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
