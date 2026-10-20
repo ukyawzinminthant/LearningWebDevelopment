@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Style/Calculator.css"
+</head>
+<body>
+    <div>
+        <h1> Kyaw Zin's Calculator</h1>
+<label for="firstnumber"> FirstNumber</label>
+<input id="firstnumber" name="firstNumber" required>
+ <br><br>
+<label for="secondnumber">Secondnumber</label>
+<input id="secondnumber" name="secondnumber" required>
+<br>
+    </div>
+
+    <div>
+        <button onclick="add()">Add</button>
+         <button onclick="substract()">Sub</button>
+          <button onclick="multiply()">Multi</button>
+           <button onclick="divide()">Div</button>
+            <button onclick="modilus()">Mod</button>
+             <button onclick="exponent()">Ex</button>
+           
+    </div>
+     <h1 id="result">Result: </h1>
+    <script>
+        function add() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber + snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+        function substract() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber - snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+        function multiply() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber * snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+        function divide() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber / snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+        function modilus() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber %  snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+        function exponent() {
+            const fnumber = parseFloat(document.getElementById("firstnumber").value);
+            const snumber = parseFloat(document.getElementById("secondnumber").value);
+            const resultNumber = fnumber ** snumber;
+            document.getElementById("result").innerText = "Result : " + resultNumber;
+        }
+    </script>
+</body>
+</html>

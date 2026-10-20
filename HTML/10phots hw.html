@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Photos Gallery</title>
+</head>
+
+<body>
+
+    <h2>Photos Gallery</h2>
+
+    <img id="myImage" src="kutho.jpg"
+         style="width:300px; height:250px; object-fit:cover;">
+
+    <br><br>
+
+    <button onclick="previousPhoto()">Previous</button>
+    <button onclick="nextPhoto()">Next</button>
+
+    <p id="photoNumber">Photo 1 of 10</p>
+
+    <script>
+        let photos = [
+            "kyeik.jpg",
+            "mount.jpg",
+            "soul.png",
+            "wat.jpg",
+            "p1.jpg",
+            "41774.jpg",
+            "41849.jpg",
+        ];
+
+        let currentPhoto = 0;
+
+        function showPhoto() {
+            document.getElementById("myImage").src =
+                photos[currentPhoto];
+
+            document.getElementById("photoNumber").textContent=
+                "Photo " + (currentPhoto + 1) + " of 10";
+        }
+
+        function nextPhoto() {
+            currentPhoto++;
+
+            if (currentPhoto >= photos.length) {
+                currentPhoto = 0;
+            }
+
+            showPhoto();
+        }
+
+        function previousPhoto() {
+            currentPhoto--;
+
+            if (currentPhoto < 0) {
+                currentPhoto = photos.length - 1;
+            }
+
+            showPhoto();
+        }
+    </script>
+
+</body>
+</html>
